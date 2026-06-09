@@ -45,7 +45,7 @@ const Navbar = () => {
             </a>
           </div>
           <a
-            href="https://tyesha11341.softr.app"
+            href="https://script.google.com/macros/s/AKfycbzU9zGvLya6rHOSJeOdIO6EN1OPwUaccvC3_z56mqLMj1zFRxJlH9tevq6P1uw3ZcwiQA/exec"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 bg-accent hover:bg-accent/90 text-nixon-dark text-xs font-heading tracking-wider uppercase px-4 py-2 rounded-lg transition-colors"
