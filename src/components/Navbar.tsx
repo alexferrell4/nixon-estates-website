@@ -45,7 +45,7 @@ const Navbar = () => {
             </a>
           </div>
           <a
-            href="https://script.google.com/macros/s/AKfycbzU9zGvLya6rHOSJeOdIO6EN1OPwUaccvC3_z56mqLMj1zFRxJlH9tevq6P1uw3ZcwiQA/exec"
+            href="https://script.google.com/macros/s/AKfycbyVfMzRR2hnzH4QXD5i2u0jEoAfxTC3gtzs4VLjO4hFCSqHbapBT7REZVxHBGmRYntTxA/exec"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 bg-accent hover:bg-accent/90 text-nixon-dark text-xs font-heading tracking-wider uppercase px-4 py-2 rounded-lg transition-colors"
@@ -80,7 +80,7 @@ const Navbar = () => {
             <Phone className="h-4 w-4" /> (713) 419-2653
           </a>
           <a
-            href="https://script.google.com/macros/s/AKfycbzU9zGvLya6rHOSJeOdIO6EN1OPwUaccvC3_z56mqLMj1zFRxJlH9tevq6P1uw3ZcwiQA/exec"
+            href="https://script.google.com/macros/s/AKfycbyVfMzRR2hnzH4QXD5i2u0jEoAfxTC3gtzs4VLjO4hFCSqHbapBT7REZVxHBGmRYntTxA/exec"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}
