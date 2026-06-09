@@ -7,7 +7,6 @@ import FloorPlansSection from "@/components/FloorPlansSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import BackgroundMusic from "@/components/BackgroundMusic";
-import Chatbot from "@/components/Chatbot";
 
 const Index = () => {
   return (
@@ -21,7 +20,6 @@ const Index = () => {
       <ContactSection />
       <Footer />
       <BackgroundMusic />
-      <Chatbot />
     </div>
   );
 };
