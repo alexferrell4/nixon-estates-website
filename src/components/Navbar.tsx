@@ -20,7 +20,7 @@ const Navbar = () => {
           <img src={logo} alt="Nixon Home Care Logo" className="h-9 w-9 rounded-full object-cover" />
           <div className="hidden sm:block">
             <span className="font-heading text-lg tracking-wide text-primary-foreground">
-              Nixon Estate Senior Living
+              Nixon Senior Estates
             </span>
           </div>
         </a>

@@ -7,7 +7,7 @@ import slideLaundry from "@/assets/slide-laundry.jpg";
 import nixonEmblem from "@/assets/nixon-n-emblem.png";
 
 const slides = [
-  { src: heroImage, alt: "Nixon Estate Senior Living building exterior at sunset" },
+  { src: heroImage, alt: "Nixon Senior Estates building exterior at sunset" },
   { src: slideRoom, alt: "Spacious resident room interior" },
   { src: slideOffice, alt: "Modern office and business center" },
   { src: slideLaundry, alt: "On-site laundry facilities" },

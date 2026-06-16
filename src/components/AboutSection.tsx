@@ -11,7 +11,7 @@ const AboutSection = () => {
           </h2>
           <div className="gold-divider mb-8" />
           <p className="text-body-lg text-muted-foreground max-w-3xl mx-auto">
-            Nixon Estate Senior Living brings style, comfort, care and community to our Seniors
+            Nixon Senior Estates brings style, comfort, care and community to our Seniors
             within the Houston Area. Our new 17-unit independent living facility is designed
             for Veterans, People with Special Needs and Seniors who deserve a home that honors their service and
             celebrates their independence.
@@ -22,7 +22,7 @@ const AboutSection = () => {
           <div>
             <img
               src={coverImage}
-              alt="Nixon Estate Senior Living exterior and interior views"
+              alt="Nixon Senior Estates exterior and interior views"
               className="rounded-lg shadow-xl"
               loading="lazy"
               width={800}
@@ -32,7 +32,7 @@ const AboutSection = () => {
           <div className="space-y-6">
             <h3 className="font-heading text-2xl text-foreground">A Home Away From Home</h3>
             <p className="text-body-lg text-muted-foreground">
-              Every detail of Nixon Estate Senior Living has been thoughtfully designed to provide
+              Every detail of Nixon Senior Estates has been thoughtfully designed to provide
               a warm, welcoming environment where residents can thrive. From spacious living areas
               to shared community spaces, we've created a place where comfort meets connection.
             </p>

@@ -5,7 +5,7 @@ const amenities = [
   { icon: Shield, title: "Veteran-Friendly", desc: "Honoring those who served our country" },
   { icon: Users, title: "Community Spaces", desc: "Lounge, dining, and social gathering areas" },
   { icon: Utensils, title: "On-Site Laundry", desc: "Convenient laundry facilities for all residents" },
-  { icon: Car, title: "Covered Parking", desc: "Safe, accessible parking for residents and guests" },
+  { icon: Car, title: " Parking", desc: "Safe, accessible parking for residents and guests" },
   { icon: Wifi, title: "Modern Amenities", desc: "Elevator access, office area, and more" },
 ];
 
