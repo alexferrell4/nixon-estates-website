@@ -19,7 +19,7 @@ const PrivacyPolicy = () => {
       <div className="max-w-3xl mx-auto px-6 py-12">
         <h1 className="font-heading text-4xl text-primary-foreground mb-2">Privacy Policy</h1>
         <p className="text-primary-foreground/50 font-body text-sm mb-10">
-          Last updated: March 30, 2026
+          Last updated: June 16, 2026
         </p>
 
         <div className="space-y-8 text-primary-foreground/80 font-body text-sm leading-relaxed">
