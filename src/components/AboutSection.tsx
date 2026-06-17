@@ -1,4 +1,4 @@
-import coverImage from "@/assets/cover.png";
+import coverVideo from "@/assets/cover.mp4";
 
 const AboutSection = () => {
   return (
@@ -20,14 +20,12 @@ const AboutSection = () => {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <img
-              src={coverImage}
-              alt="Nixon Senior Estates exterior and interior views"
-              className="rounded-lg shadow-xl"
-              loading="lazy"
-              width={800}
-              height={1000}
-            />
+          
+              <video autoPlay muted loop playsInline>
+  <source src={coverVideo} type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+    
           </div>
           <div className="space-y-6">
             <h3 className="font-heading text-2xl text-foreground">A Home Away From Home</h3>
