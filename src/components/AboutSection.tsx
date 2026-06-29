@@ -40,12 +40,12 @@ const AboutSection = () => {
           <div className="space-y-8">
             {/* Placeholder Image */}
             <div className="overflow-hidden rounded-2xl shadow-xl border border-border">
-              <img
-                src={aboutImage}
-                alt="Nixon Senior Estates"
-                className="w-full h-96 object-cover transition-transform duration-500 hover:scale-105"
-              />
-            </div>
+  <img
+    src={aboutImage}
+    alt="Nixon Senior Estates"
+    className="w-full h-auto transition-transform duration-500 hover:scale-105"
+  />
+</div>
 
             {/* Text Content */}
             <div className="space-y-6">
