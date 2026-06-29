@@ -36,9 +36,9 @@ const AboutSection = () => {
             </video>
           </div>
 
-          {/* Right Column - Image + Content */}
+         {/* Right Column - Image + Content */}
           <div className="space-y-8">
-            {/* Placeholder Image *\}
+            {/* Placeholder Image */}
             <div className="overflow-hidden rounded-2xl shadow-xl border border-border">
               <img
                 src={aboutImage}
