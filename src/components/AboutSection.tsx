@@ -43,7 +43,7 @@ const AboutSection = () => {
               <img
                 src={aboutImage}
                 alt="Nixon Senior Estates"
-                className="w-full h-72 object-cover transition-transform duration-500 hover:scale-105"
+                className="w-full h-96 object-cover transition-transform duration-500 hover:scale-105"
               />
             </div>
 
