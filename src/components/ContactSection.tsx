@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Send } from "lucide-react"; 
+import { Phone, Mail, MapPin, Send, Instagram, XIcon, Facebook, Linkedin } from "lucide-react"; 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -105,13 +105,55 @@ const ContactSection = () => {
               </div>
             </a>
 
+             <div className="flex items-center gap-5 p-6 rounded-xl border border-primary-foreground/10">
+              <div className="flex-shrink-0 w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center">
+                <Instagram className="h-6 w-6 text-accent" />
+              </div> 
+              <div>
+                <h3 className="font-heading text-lg text-primary-foreground mb-0.5">Follow us on Instagram</h3>
+                <p className="text-primary-foreground/60 text-sm font-body"> @nixonseniorestates </p>
+              </div>
+            </div>
+
+             <div className="flex items-center gap-5 p-6 rounded-xl border border-primary-foreground/10">
+              <div className="flex-shrink-0 w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center">
+                <XIcon className="h-6 w-6 text-accent" />
+              </div> 
+              <div>
+                <h3 className="font-heading text-lg text-primary-foreground mb-0.5">Follow us on X</h3>
+                <p className="text-primary-foreground/60 text-sm font-body"> @nixon_estates</p>
+              </div>
+            </div>
+
+             <div className="flex items-center gap-5 p-6 rounded-xl border border-primary-foreground/10">
+              <div className="flex-shrink-0 w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center">
+                <Facebook className="h-6 w-6 text-accent" />
+              </div> 
+              <div>
+                <h3 className="font-heading text-lg text-primary-foreground mb-0.5">Follow us on Facebook</h3>
+                <p className="text-primary-foreground/60 text-sm font-body"> @Nixon Estates</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-5 p-6 rounded-xl border border-primary-foreground/10">
+              <div className="flex-shrink-0 w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center">
+                <Linkedin className="h-6 w-6 text-accent" />
+              </div> 
+              <div>
+                <h3 className="font-heading text-lg text-primary-foreground mb-0.5">Follow us on LinkedIn</h3>
+                <p className="text-primary-foreground/60 text-sm font-body"> @Nixon Senior Estates</p>
+              </div>
+            </div>
+
+            
+
             <div className="flex items-center gap-5 p-6 rounded-xl border border-primary-foreground/10">
               <div className="flex-shrink-0 w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center">
                 <MapPin className="h-6 w-6 text-accent" />
               </div>
               <div>
                 <h3 className="font-heading text-lg text-primary-foreground mb-0.5">Location</h3>
-                <p className="text-primary-foreground/60 text-sm font-body">Houston, TX Area</p>
+                <p className="text-primary-foreground/60 text-sm font-body">Greater Houston Area</p>
               </div>
             </div>
 
