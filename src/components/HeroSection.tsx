@@ -7,7 +7,7 @@ import slideLaundry from "@/assets/slide-laundry.jpg";
 import nixonEmblem from "@/assets/nixon-n-emblem.png";
 
 const slides = [
-  { src: heroImage, alt: "Nixon Senior Estates building exterior at sunset" },
+  { src: heroImage, alt: "Nixon Signature Estates building exterior at sunset" },
   { src: slideRoom, alt: "Spacious resident room interior" },
   { src: slideOffice, alt: "Modern office and business center" },
   { src: slideLaundry, alt: "On-site laundry facilities" },
@@ -164,7 +164,7 @@ const HeroSection = () => {
       <div className="absolute bottom-0 left-0 right-0 z-10">
         <div className="bg-nixon-dark py-4 text-center">
           <p className="text-primary-foreground/80 text-xs md:text-sm tracking-[0.3em] uppercase font-body font-light">
-            Independent Living for Veterans, Special Needs & Seniors · Houston, TX
+            Intentional Living for Veterans, Special Needs & Seniors · Houston, TX
           </p>
         </div>
       </div>

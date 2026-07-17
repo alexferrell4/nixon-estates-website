@@ -14,9 +14,9 @@ const AboutSection = () => {
           </h2>
           <div className="gold-divider mb-8" />
           <p className="text-body-lg text-muted-foreground max-w-3xl mx-auto">
-            Nixon Senior Estates brings style, comfort, care and community to our Seniors
-            within the Houston Area. Our new 17-unit independent living facility is designed
-            for Veterans, People with Special Needs and Seniors who deserve a home that honors
+            Nixon Signature Estates brings style, comfort, care and community to our Seniors
+            within the Houston Area. Our new 17-unit intentional living facility is designed
+            for Veterans, People with Special Needs who deserve a home that honors
             their service and celebrates their independence.
           </p>
         </div>
@@ -54,7 +54,7 @@ const AboutSection = () => {
               </h3>
 
               <p className="text-body-lg text-muted-foreground">
-                Every detail of Nixon Senior Estates has been thoughtfully designed
+                Every detail of Nixon Signature Estates has been thoughtfully designed
                 to provide a warm, welcoming environment where residents can thrive.
                 From spacious living areas to shared community spaces, we've created
                 a place where comfort meets connection.

@@ -9,8 +9,8 @@ const Footer = () => {
           <div className="flex items-center gap-4">
             <img src={logo} alt="Nixon Home Care Logo" className="h-16 w-16 rounded-full object-cover" />
             <div>
-              <p className="font-heading text-lg text-primary-foreground">Nixon Senior Estates</p>
-              <p className="text-primary-foreground/50 text-xs font-body">by Nixon Home Care, Inc.</p>
+              <p className="font-heading text-lg text-primary-foreground">Nixon Signature Estates</p>
+              <p className="text-primary-foreground/50 text-xs font-body">Courtesy of Nixon Home Care, Inc.</p>
             </div>
           </div>
 
