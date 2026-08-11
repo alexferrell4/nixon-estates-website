@@ -20,7 +20,7 @@ const Navbar = () => {
           <img src={logo} alt="Nixon Home Care Logo" className="h-9 w-9 rounded-full object-cover" />
           <div className="hidden sm:block">
             <span className="font-heading text-lg tracking-wide text-primary-foreground">
-              Nixon Senior Estates
+              Nixon Signature Estates
             </span>
           </div>
         </a>
@@ -45,7 +45,7 @@ const Navbar = () => {
             </a>
           </div>
           <a
-            href="https://script.google.com/macros/s/AKfycbwLiT7l1qK8hCRuogW_zex5p30wrKPcBKBOzDhGTye5-WD77JxZdyl2EgdvX6SQrvFizQ/exec"
+            href="https://nixon-signature-estates-portal.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 bg-accent hover:bg-accent/90 text-nixon-dark text-xs font-heading tracking-wider uppercase px-4 py-2 rounded-lg transition-colors"
@@ -80,7 +80,7 @@ const Navbar = () => {
             <Phone className="h-4 w-4" /> (713) 419-2653
           </a>
           <a
-            href="https://script.google.com/macros/s/AKfycbwLiT7l1qK8hCRuogW_zex5p30wrKPcBKBOzDhGTye5-WD77JxZdyl2EgdvX6SQrvFizQ/exec"
+            href="https://nixon-signature-estates-portal.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}
