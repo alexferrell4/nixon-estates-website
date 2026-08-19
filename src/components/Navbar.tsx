@@ -37,18 +37,18 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="hidden lg:flex items-center gap-4">
-          <div className="flex items-center gap-2 text-primary-foreground">
-            <Phone className="h-4 w-4 text-accent" />
-            <a href="tel:7134192653" className="text-sm font-body tracking-wide hover:text-accent transition-colors">
+        <div className="hidden lg:flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-2 text-primary-foreground shrink-0 whitespace-nowrap">
+            <Phone className="h-4 w-4 text-accent shrink-0" />
+            <a href="tel:7134192653" className="text-sm font-body tracking-wide hover:text-accent transition-colors whitespace-nowrap">
               (713) 419-2653
             </a>
           </div>
           <a
             href="#contact"
-            className="flex items-center gap-1.5 bg-primary-foreground hover:bg-primary-foreground/90 text-primary text-xs font-heading tracking-wider uppercase px-4 py-2 rounded-lg transition-colors"
+            className="flex items-center gap-1.5 bg-primary-foreground hover:bg-primary-foreground/90 text-primary text-[11px] font-heading tracking-wider uppercase px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap"
           >
-            Apply For Leasing Today
+            Apply For Leasing
           </a>
           <a
             href="https://nixon-signature-estates-portal.vercel.app/"
