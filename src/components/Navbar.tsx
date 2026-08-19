@@ -45,6 +45,12 @@ const Navbar = () => {
             </a>
           </div>
           <a
+            href="#contact"
+            className="flex items-center gap-1.5 bg-primary-foreground hover:bg-primary-foreground/90 text-primary text-xs font-heading tracking-wider uppercase px-4 py-2 rounded-lg transition-colors"
+          >
+            Apply For Leasing Today
+          </a>
+          <a
             href="https://nixon-signature-estates-portal.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
@@ -78,6 +84,13 @@ const Navbar = () => {
           ))}
           <a href="tel:7134192653" className="flex items-center gap-2 text-accent text-sm font-body">
             <Phone className="h-4 w-4" /> (713) 419-2653
+          </a>
+          <a
+            href="#contact"
+            onClick={() => setOpen(false)}
+            className="flex items-center justify-center gap-1.5 bg-primary-foreground hover:bg-primary-foreground/90 text-primary text-xs font-heading tracking-wider uppercase px-4 py-2.5 rounded-lg transition-colors mt-2"
+          >
+            Apply For Leasing Today
           </a>
           <a
             href="https://nixon-signature-estates-portal.vercel.app/"
