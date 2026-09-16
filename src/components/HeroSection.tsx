@@ -1,16 +1,19 @@
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import heroImage from "@/assets/hero-building.jpg";
-import slideRoom from "@/assets/slide-room.jpg";
-import slideOffice from "@/assets/slide-office.jpg";
-import slideLaundry from "@/assets/slide-laundry.jpg";
+import { Link } from "react-router-dom";
+import constructionExterior from "@/assets/demo/construction-exterior.jpg";
+import modelBedroom from "@/assets/demo/model-bedroom.jpg";
+import modelKitchenette from "@/assets/demo/model-kitchenette.jpg";
+import modelBathroom from "@/assets/demo/model-bathroom-wide.jpg";
+import receptionArea from "@/assets/demo/reception-area.jpg";
 import nixonEmblem from "@/assets/nixon-n-emblem.png";
 
 const slides = [
-  { src: heroImage, alt: "Nixon Signature Estates building exterior at sunset" },
-  { src: slideRoom, alt: "Spacious resident room interior" },
-  { src: slideOffice, alt: "Modern office and business center" },
-  { src: slideLaundry, alt: "On-site laundry facilities" },
+  { src: constructionExterior, alt: "Nixon Signature Estates building — current construction progress" },
+  { src: modelBedroom, alt: "Furnished model suite bedroom" },
+  { src: modelKitchenette, alt: "Private in-suite kitchenette" },
+  { src: modelBathroom, alt: "Accessible model suite bathroom" },
+  { src: receptionArea, alt: "Nixon Signature Estates reception area" },
 ];
 
 const HeroSection = () => {
@@ -143,6 +146,21 @@ const HeroSection = () => {
               aria-label={`Go to slide ${i + 1}`}
             />
           ))}
+        </div>
+      )}
+
+      {/* Now Leasing badge - persistent once intro completes */}
+      {introComplete && (
+        <div className="absolute top-24 md:top-28 left-0 right-0 z-10 px-6 md:px-12 lg:px-20 animate-fade-in-up">
+          <div className="max-w-7xl mx-auto">
+            <Link
+              to="/#contact"
+              className="inline-flex items-center gap-2 bg-accent text-nixon-dark font-heading text-xs md:text-sm tracking-[0.2em] uppercase px-4 py-2 rounded-full shadow-lg hover:bg-accent/90 transition-colors"
+            >
+              <span className="w-2 h-2 rounded-full bg-nixon-dark animate-pulse" />
+              Now Leasing · Schedule a Tour
+            </Link>
+          </div>
         </div>
       )}
 

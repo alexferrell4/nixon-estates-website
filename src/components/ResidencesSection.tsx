@@ -1,4 +1,4 @@
-import roomImage from "@/assets/room-interior.jpg";
+import roomImage from "@/assets/demo/model-bedroom.jpg";
 import loungeImage from "@/assets/amenities-lounge.jpg";
 
 const ResidencesSection = () => {

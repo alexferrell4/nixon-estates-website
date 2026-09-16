@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Send, Instagram, XIcon, Facebook, Linkedin } from "lucide-react"; 
+import { Phone, Mail, MapPin, Send, Instagram, XIcon, Facebook, Linkedin, CalendarCheck, ClipboardList } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -53,15 +53,34 @@ const ContactSection = () => {
       <div className="max-w-7xl mx-auto">
 
         <div className="text-center mb-16">
+          <span className="inline-flex items-center gap-2 bg-accent text-nixon-dark font-heading text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-full mb-6">
+            <span className="w-2 h-2 rounded-full bg-nixon-dark animate-pulse" />
+            Now Leasing · Suites Available
+          </span>
           <p className="text-accent text-sm tracking-[0.3em] uppercase font-body mb-4">Get In Touch</p>
           <h2 className="heading-section text-primary-foreground mb-6">
-            Schedule a Visit or Make an Inquiry
+            Schedule a Tour or Start Your Application
           </h2>
           <div className="gold-divider mb-8" />
           <p className="text-body-lg text-primary-foreground/70 max-w-2xl mx-auto">
-            We'd love for you to learn more about Nixon Senior Estates.
-            Contact us today to schedule a tour, make an inquiry, or request more information.
+            Nixon Signature Estates is now leasing a limited number of suites to Veterans,
+            People with Special Needs, and Seniors. Reach out today to schedule a tour,
+            start your leasing application, or ask a question — we'll walk you through every step.
           </p>
+        </div>
+
+        <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
+          {[
+            { icon: Phone, step: "1. Inquire", desc: "Call, email, or submit the form below to tell us about your housing needs." },
+            { icon: CalendarCheck, step: "2. Tour", desc: "We'll schedule a visit so you can see a model suite in person." },
+            { icon: ClipboardList, step: "3. Apply", desc: "Complete a leasing application and our team will guide you to move-in." },
+          ].map((item) => (
+            <div key={item.step} className="text-center p-6 rounded-xl border border-primary-foreground/10">
+              <item.icon className="h-6 w-6 text-accent mx-auto mb-3" />
+              <h3 className="font-heading text-sm text-primary-foreground tracking-wide uppercase mb-2">{item.step}</h3>
+              <p className="text-primary-foreground/60 text-xs font-body leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">

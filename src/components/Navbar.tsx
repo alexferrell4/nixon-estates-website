@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, Phone, LogIn } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
@@ -35,6 +36,12 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+          <Link
+            to="/demo-rooms"
+            className="text-primary-foreground/80 hover:text-accent text-sm tracking-widest uppercase font-body transition-colors"
+          >
+            Demo Rooms
+          </Link>
         </div>
 
         <div className="hidden lg:flex items-center gap-3 shrink-0">
@@ -44,12 +51,12 @@ const Navbar = () => {
               (713) 419-2653
             </a>
           </div>
-          <a
-            href="#contact"
+          <Link
+            to="/#contact"
             className="flex items-center gap-1.5 bg-primary-foreground hover:bg-primary-foreground/90 text-primary text-[11px] font-heading tracking-wider uppercase px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap"
           >
             Apply For Leasing
-          </a>
+          </Link>
           <a
             href="https://nixon-signature-estates-portal.vercel.app/"
             target="_blank"
@@ -82,16 +89,23 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+          <Link
+            to="/demo-rooms"
+            onClick={() => setOpen(false)}
+            className="block text-primary-foreground/80 hover:text-accent text-sm tracking-widest uppercase font-body transition-colors"
+          >
+            Demo Rooms
+          </Link>
           <a href="tel:7134192653" className="flex items-center gap-2 text-accent text-sm font-body">
             <Phone className="h-4 w-4" /> (713) 419-2653
           </a>
-          <a
-            href="#contact"
+          <Link
+            to="/#contact"
             onClick={() => setOpen(false)}
             className="flex items-center justify-center gap-1.5 bg-primary-foreground hover:bg-primary-foreground/90 text-primary text-xs font-heading tracking-wider uppercase px-4 py-2.5 rounded-lg transition-colors mt-2"
           >
             Apply For Leasing Today
-          </a>
+          </Link>
           <a
             href="https://nixon-signature-estates-portal.vercel.app/"
             target="_blank"
