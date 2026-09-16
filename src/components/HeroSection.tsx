@@ -1,9 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useSectionLink } from "@/hooks/use-section-link";
 import constructionExterior from "@/assets/demo/construction-exterior.jpg";
 import modelBedroom from "@/assets/demo/model-bedroom.jpg";
+import modelBedroomCornerF from "@/assets/demo/model-bedroom-corner-f.jpg";
 import modelKitchenette from "@/assets/demo/model-kitchenette.jpg";
+import modelKitchenetteDetail from "@/assets/demo/model-kitchenette-detail.jpg";
 import modelBathroom from "@/assets/demo/model-bathroom-wide.jpg";
 import receptionArea from "@/assets/demo/reception-area.jpg";
 import nixonEmblem from "@/assets/nixon-n-emblem.png";
@@ -13,6 +15,8 @@ const slides = [
   { src: modelBedroom, alt: "Furnished model suite bedroom" },
   { src: modelKitchenette, alt: "Private in-suite kitchenette" },
   { src: modelBathroom, alt: "Accessible model suite bathroom" },
+  { src: modelBedroomCornerF, alt: "Model suite bedroom with dresser and mirror" },
+  { src: modelKitchenetteDetail, alt: "Model suite kitchenette sink and cooktop detail" },
   { src: receptionArea, alt: "Nixon Signature Estates reception area" },
 ];
 
@@ -21,6 +25,7 @@ const HeroSection = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [doorsOpen, setDoorsOpen] = useState(false);
   const [introComplete, setIntroComplete] = useState(false);
+  const goToSection = useSectionLink();
 
   // Door opening sequence
   useEffect(() => {
@@ -58,10 +63,17 @@ const HeroSection = () => {
             i === current ? "opacity-100" : "opacity-0"
           }`}
         >
+          {/* Blurred backdrop fills the banner so portrait photos don't leave bars */}
+          <img
+            src={slide.src}
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl brightness-[0.4]"
+          />
+          {/* Full, uncropped photo */}
           <img
             src={slide.src}
             alt={slide.alt}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-contain"
             style={{
               animation: i === current && introComplete ? "kenburns 6s ease-in-out forwards" : "none",
             }}
@@ -153,13 +165,14 @@ const HeroSection = () => {
       {introComplete && (
         <div className="absolute top-24 md:top-28 left-0 right-0 z-10 px-6 md:px-12 lg:px-20 animate-fade-in-up">
           <div className="max-w-7xl mx-auto">
-            <Link
-              to="/#contact"
+            <a
+              href="/#contact"
+              onClick={goToSection("contact")}
               className="inline-flex items-center gap-2 bg-accent text-nixon-dark font-heading text-xs md:text-sm tracking-[0.2em] uppercase px-4 py-2 rounded-full shadow-lg hover:bg-accent/90 transition-colors"
             >
               <span className="w-2 h-2 rounded-full bg-nixon-dark animate-pulse" />
               Now Leasing · Schedule a Tour
-            </Link>
+            </a>
           </div>
         </div>
       )}

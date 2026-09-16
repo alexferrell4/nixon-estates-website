@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { scrollToSection } from "@/lib/scrollToSection";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -14,8 +15,7 @@ import BackgroundMusic from "@/components/BackgroundMusic";
 const Index = () => {
   useEffect(() => {
     if (window.location.hash) {
-      const el = document.querySelector(window.location.hash);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
+      scrollToSection(window.location.hash.slice(1));
     }
   }, []);
 

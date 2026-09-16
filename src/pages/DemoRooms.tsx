@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { Expand, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { useSectionLink } from "@/hooks/use-section-link";
 
 import constructionExterior from "@/assets/demo/construction-exterior.jpg";
 import modelBedroom from "@/assets/demo/model-bedroom.jpg";
@@ -12,9 +12,11 @@ import modelBedroomB from "@/assets/demo/model-bedroom-corner-b.jpg";
 import modelBedroomC from "@/assets/demo/model-bedroom-corner-c.jpg";
 import modelBedroomD from "@/assets/demo/model-bedroom-corner-d.jpg";
 import modelBedroomE from "@/assets/demo/model-bedroom-corner-e.jpg";
+import modelBedroomF from "@/assets/demo/model-bedroom-corner-f.jpg";
 import modelDecorDetail from "@/assets/demo/model-decor-detail.jpg";
 import modelKitchenette from "@/assets/demo/model-kitchenette.jpg";
 import modelKitchenetteWide from "@/assets/demo/model-kitchenette-wide.jpg";
+import modelKitchenetteDetail from "@/assets/demo/model-kitchenette-detail.jpg";
 import modelBathroom from "@/assets/demo/model-bathroom.jpg";
 import modelBathroomWide from "@/assets/demo/model-bathroom-wide.jpg";
 
@@ -48,6 +50,7 @@ const groups: GalleryGroup[] = [
       { src: modelBedroomC, alt: "Bedroom nightstand and lamp" },
       { src: modelBedroomD, alt: "Bedroom entry with framed art" },
       { src: modelBedroomE, alt: "Bedroom dresser with decorative accents" },
+      { src: modelBedroomF, alt: "Bedroom with twin bed, dresser, and arched mirror" },
       { src: modelDecorDetail, alt: "Framed botanical art detail near window" },
     ],
   },
@@ -58,6 +61,7 @@ const groups: GalleryGroup[] = [
     images: [
       { src: modelKitchenette, alt: "Model suite kitchenette with white cabinetry" },
       { src: modelKitchenetteWide, alt: "Wide view of kitchenette and entry door" },
+      { src: modelKitchenetteDetail, alt: "Close view of kitchenette sink and cooktop" },
     ],
   },
   {
@@ -73,6 +77,7 @@ const groups: GalleryGroup[] = [
 
 const DemoRooms = () => {
   const [lightbox, setLightbox] = useState<GalleryImage | null>(null);
+  const goToSection = useSectionLink();
 
   return (
     <div className="min-h-screen bg-background">
@@ -81,13 +86,14 @@ const DemoRooms = () => {
       {/* Page header */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-primary">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <Link
-            to="/#contact"
+          <a
+            href="/#contact"
+            onClick={goToSection("contact")}
             className="inline-flex items-center gap-2 bg-accent text-nixon-dark font-heading text-xs md:text-sm tracking-[0.2em] uppercase px-4 py-2 rounded-full shadow-lg hover:bg-accent/90 transition-colors mb-6"
           >
             <span className="w-2 h-2 rounded-full bg-nixon-dark animate-pulse" />
             Now Leasing · Schedule a Tour
-          </Link>
+          </a>
           <p className="text-accent text-sm tracking-[0.3em] uppercase font-body mb-4">Gallery</p>
           <h1 className="heading-section text-primary-foreground mb-6">
             Inside Nixon Signature Estates
@@ -153,13 +159,14 @@ const DemoRooms = () => {
             Suites are filling up. Schedule a tour or start your leasing application today
             and see Nixon Signature Estates in person.
           </p>
-          <Link
-            to="/#contact"
+          <a
+            href="/#contact"
+            onClick={goToSection("contact")}
             className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-nixon-dark font-heading text-sm tracking-wider uppercase px-8 py-4 rounded-lg transition-colors"
           >
             Apply For Leasing Today
             <ArrowRight className="h-4 w-4" />
-          </Link>
+          </a>
         </div>
       </section>
 

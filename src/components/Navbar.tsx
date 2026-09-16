@@ -2,17 +2,19 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Phone, LogIn } from "lucide-react";
 import logo from "@/assets/logo.jpg";
+import { useSectionLink } from "@/hooks/use-section-link";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Residences", href: "#residences" },
-  { label: "Amenities", href: "#amenities" },
-  { label: "Floor Plans", href: "#floor-plans" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", id: "about" },
+  { label: "Residences", id: "residences" },
+  { label: "Amenities", id: "amenities" },
+  { label: "Floor Plans", id: "floor-plans" },
+  { label: "Contact", id: "contact" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const goToSection = useSectionLink();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
@@ -29,8 +31,9 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
-              key={link.href}
-              href={link.href}
+              key={link.id}
+              href={`/#${link.id}`}
+              onClick={goToSection(link.id)}
               className="text-primary-foreground/80 hover:text-accent text-sm tracking-widest uppercase font-body transition-colors"
             >
               {link.label}
@@ -51,12 +54,13 @@ const Navbar = () => {
               (713) 419-2653
             </a>
           </div>
-          <Link
-            to="/#contact"
+          <a
+            href="/#contact"
+            onClick={goToSection("contact")}
             className="flex items-center gap-1.5 bg-primary-foreground hover:bg-primary-foreground/90 text-primary text-[11px] font-heading tracking-wider uppercase px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap"
           >
             Apply For Leasing
-          </Link>
+          </a>
           <a
             href="https://nixon-signature-estates-portal.vercel.app/"
             target="_blank"
@@ -81,9 +85,12 @@ const Navbar = () => {
         <div className="lg:hidden bg-primary border-t border-primary-foreground/10 px-6 py-6 space-y-4">
           {navLinks.map((link) => (
             <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
+              key={link.id}
+              href={`/#${link.id}`}
+              onClick={(e) => {
+                goToSection(link.id)(e);
+                setOpen(false);
+              }}
               className="block text-primary-foreground/80 hover:text-accent text-sm tracking-widest uppercase font-body transition-colors"
             >
               {link.label}
@@ -99,13 +106,16 @@ const Navbar = () => {
           <a href="tel:7134192653" className="flex items-center gap-2 text-accent text-sm font-body">
             <Phone className="h-4 w-4" /> (713) 419-2653
           </a>
-          <Link
-            to="/#contact"
-            onClick={() => setOpen(false)}
+          <a
+            href="/#contact"
+            onClick={(e) => {
+              goToSection("contact")(e);
+              setOpen(false);
+            }}
             className="flex items-center justify-center gap-1.5 bg-primary-foreground hover:bg-primary-foreground/90 text-primary text-xs font-heading tracking-wider uppercase px-4 py-2.5 rounded-lg transition-colors mt-2"
           >
             Apply For Leasing Today
-          </Link>
+          </a>
           <a
             href="https://nixon-signature-estates-portal.vercel.app/"
             target="_blank"
