@@ -7,6 +7,7 @@ import AmenitiesSection from "@/components/AmenitiesSection";
 import FloorPlansSection from "@/components/FloorPlansSection";
 import DemoRoomsPreviewSection from "@/components/DemoRoomsPreviewSection";
 import ContactSection from "@/components/ContactSection";
+import OtherServicesSection from "@/components/OtherServicesSection";
 import Footer from "@/components/Footer";
 import BackgroundMusic from "@/components/BackgroundMusic";
 
@@ -28,6 +29,7 @@ const Index = () => {
       <FloorPlansSection />
       <DemoRoomsPreviewSection />
       <ContactSection />
+      <OtherServicesSection />
       <Footer />
       <BackgroundMusic />
     </div>

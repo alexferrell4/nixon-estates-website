@@ -5,6 +5,26 @@ const Footer = () => {
   return (
     <footer className="bg-nixon-dark px-6 py-12">
       <div className="max-w-7xl mx-auto">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-primary-foreground/50 text-xs font-body mb-8">
+          <span className="uppercase tracking-[0.2em] text-primary-foreground/30">Part of the Nixon Home Care Family</span>
+          <a
+            href="https://nixonhomecare.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-accent transition-colors"
+          >
+            nixonhomecare.org
+          </a>
+          <a
+            href="https://nixoncounselingservices.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-accent transition-colors"
+          >
+            nixoncounselingservices.org
+          </a>
+        </div>
+
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex items-center gap-4">
             <img src={logo} alt="Nixon Home Care Logo" className="h-16 w-16 rounded-full object-cover" />
