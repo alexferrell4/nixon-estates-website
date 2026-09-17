@@ -1,21 +1,21 @@
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useSectionLink } from "@/hooks/use-section-link";
+import buildingRendering from "@/assets/demo/building-rendering.jpg";
 import constructionExterior from "@/assets/demo/construction-exterior.jpg";
 import modelBedroom from "@/assets/demo/model-bedroom.jpg";
-import modelBedroomCornerF from "@/assets/demo/model-bedroom-corner-f.jpg";
 import modelKitchenette from "@/assets/demo/model-kitchenette.jpg";
 import modelKitchenetteDetail from "@/assets/demo/model-kitchenette-detail.jpg";
-import modelBathroom from "@/assets/demo/model-bathroom-wide.jpg";
+import modelBathroom from "@/assets/demo/model-bathroom.jpg";
 import receptionArea from "@/assets/demo/reception-area.jpg";
 import nixonEmblem from "@/assets/nixon-n-emblem.png";
 
 const slides = [
+  { src: buildingRendering, alt: "Nixon Signature Estates building exterior" },
   { src: constructionExterior, alt: "Nixon Signature Estates building — current construction progress" },
   { src: modelBedroom, alt: "Furnished model suite bedroom" },
   { src: modelKitchenette, alt: "Private in-suite kitchenette" },
   { src: modelBathroom, alt: "Accessible model suite bathroom" },
-  { src: modelBedroomCornerF, alt: "Model suite bedroom with dresser and mirror" },
   { src: modelKitchenetteDetail, alt: "Model suite kitchenette sink and cooktop detail" },
   { src: receptionArea, alt: "Nixon Signature Estates reception area" },
 ];
