@@ -18,17 +18,17 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-1.5">
-        <a href="#" className="flex items-center gap-3">
-          <img src={logo} alt="Nixon Home Care Logo" className="h-9 w-9 rounded-full object-cover" />
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-x-6 px-6 py-1.5">
+        <a href="#" className="flex items-center gap-3 shrink-0">
+          <img src={logo} alt="Nixon Home Care Logo" className="h-9 w-9 rounded-full object-cover shrink-0" />
           <div className="hidden sm:block">
-            <span className="font-heading text-lg tracking-wide text-primary-foreground">
+            <span className="font-heading text-lg tracking-wide text-primary-foreground whitespace-nowrap">
               Nixon Signature Estates
             </span>
           </div>
         </a>
 
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden 2xl:flex items-center gap-5 2xl:gap-6">
           {navLinks.map((link) => (
             <a
               key={link.id}
@@ -45,9 +45,15 @@ const Navbar = () => {
           >
             Demo Rooms
           </Link>
+          <Link
+            to="/blog"
+            className="text-primary-foreground/80 hover:text-accent text-sm tracking-widest uppercase font-body transition-colors"
+          >
+            Blog
+          </Link>
         </div>
 
-        <div className="hidden lg:flex items-center gap-3 shrink-0">
+        <div className="hidden 2xl:flex items-center gap-3 shrink-0">
           <div className="flex items-center gap-2 text-primary-foreground shrink-0 whitespace-nowrap">
             <Phone className="h-4 w-4 text-accent shrink-0" />
             <a href="tel:7134192653" className="text-sm font-body tracking-wide hover:text-accent transition-colors whitespace-nowrap">
@@ -74,7 +80,7 @@ const Navbar = () => {
 
         <button
           onClick={() => setOpen(!open)}
-          className="lg:hidden text-primary-foreground"
+          className="2xl:hidden text-primary-foreground"
           aria-label="Toggle menu"
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -82,7 +88,7 @@ const Navbar = () => {
       </div>
 
       {open && (
-        <div className="lg:hidden bg-primary border-t border-primary-foreground/10 px-6 py-6 space-y-4">
+        <div className="2xl:hidden bg-primary border-t border-primary-foreground/10 px-6 py-6 space-y-4">
           {navLinks.map((link) => (
             <a
               key={link.id}
@@ -102,6 +108,13 @@ const Navbar = () => {
             className="block text-primary-foreground/80 hover:text-accent text-sm tracking-widest uppercase font-body transition-colors"
           >
             Demo Rooms
+          </Link>
+          <Link
+            to="/blog"
+            onClick={() => setOpen(false)}
+            className="block text-primary-foreground/80 hover:text-accent text-sm tracking-widest uppercase font-body transition-colors"
+          >
+            Blog
           </Link>
           <a href="tel:7134192653" className="flex items-center gap-2 text-accent text-sm font-body">
             <Phone className="h-4 w-4" /> (713) 419-2653
