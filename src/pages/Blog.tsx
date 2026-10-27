@@ -33,6 +33,7 @@ const Blog = () => {
                   <img
                     src={post.coverImage.src}
                     alt={post.coverImage.alt}
+                    style={{ objectPosition: post.coverImage.position }}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     loading="lazy"
                   />

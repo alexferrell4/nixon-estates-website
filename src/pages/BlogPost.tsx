@@ -1,17 +1,62 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Expand } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { useSectionLink } from "@/hooks/use-section-link";
-import { getBlogPost, type BlogImage } from "@/data/blogPosts";
+import { getBlogPost, type BlogImage, type BlogPost as BlogPostData } from "@/data/blogPosts";
+
+/** Sets per-post title, meta description, and JSON-LD; restores the defaults on leave. */
+function usePostSeo(post: BlogPostData | undefined) {
+  useEffect(() => {
+    if (!post) return;
+    const title = post.seo?.title ?? `${post.title} | Nixon Signature Estates`;
+    const description = post.seo?.description ?? post.excerpt;
+
+    const prevTitle = document.title;
+    document.title = title;
+
+    const metaRestores = (
+      [
+        ["name", "description", description],
+        ["property", "og:title", title],
+        ["property", "og:description", description],
+        ["name", "twitter:title", title],
+        ["name", "twitter:description", description],
+      ] as const
+    ).map(([attr, key, value]) => {
+      const el = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
+      if (!el) return () => {};
+      const prev = el.content;
+      el.content = value;
+      return () => {
+        el.content = prev;
+      };
+    });
+
+    let script: HTMLScriptElement | undefined;
+    if (post.schema) {
+      script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.text = JSON.stringify(post.schema);
+      document.head.appendChild(script);
+    }
+
+    return () => {
+      document.title = prevTitle;
+      metaRestores.forEach((restore) => restore());
+      script?.remove();
+    };
+  }, [post]);
+}
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getBlogPost(slug) : undefined;
   const [lightbox, setLightbox] = useState<BlogImage | null>(null);
   const goToSection = useSectionLink();
+  usePostSeo(post);
 
   if (!post) return <Navigate to="/blog" replace />;
 
@@ -26,6 +71,7 @@ const BlogPost = () => {
             src={post.coverImage.src}
             alt={post.coverImage.alt}
             className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: post.coverImage.position }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-nixon-dark/90 via-nixon-dark/30 to-nixon-dark/40" />
           <div className="relative h-full flex flex-col justify-end max-w-4xl mx-auto px-6 pb-10">
@@ -57,6 +103,17 @@ const BlogPost = () => {
                   <h2 key={i} className="font-heading text-2xl text-foreground pt-2">
                     {block.text}
                   </h2>
+                );
+              }
+              if (block.type === "figure") {
+                return (
+                  <button
+                    key={i}
+                    onClick={() => setLightbox(block.image)}
+                    className="block mx-auto max-w-md w-full overflow-hidden rounded-xl shadow-lg"
+                  >
+                    <img src={block.image.src} alt={block.image.alt} className="w-full h-auto" loading="lazy" />
+                  </button>
                 );
               }
               // gallery

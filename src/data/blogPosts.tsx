@@ -7,16 +7,21 @@ import soImg06 from "@/assets/blog/soft-opening/soft-opening-06.jpg";
 import soImg07 from "@/assets/blog/soft-opening/soft-opening-07.jpg";
 import soImg08 from "@/assets/blog/soft-opening/soft-opening-08.jpg";
 import soImg09 from "@/assets/blog/soft-opening/soft-opening-09.jpg";
+import rcFlyer from "@/assets/blog/ribbon-cutting/ribbon-cutting-flyer.jpg";
+
+const SITE_URL = "https://nixon-estates.com";
 
 export interface BlogImage {
   src: string;
   alt: string;
+  position?: string; // CSS object-position for cropped views
 }
 
 export type BlogBlock =
   | { type: "p"; text: string }
   | { type: "h2"; text: string }
-  | { type: "gallery"; images: BlogImage[] };
+  | { type: "gallery"; images: BlogImage[] }
+  | { type: "figure"; image: BlogImage }; // full, uncropped image
 
 export interface BlogPost {
   slug: string;
@@ -26,9 +31,97 @@ export interface BlogPost {
   excerpt: string;
   coverImage: BlogImage;
   content: BlogBlock[];
+  seo?: { title: string; description: string };
+  schema?: Record<string, unknown>; // JSON-LD
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "ribbon-cutting",
+    title: "Join Us for the Nixon Signature Estates Ribbon Cutting",
+    date: "2026-10-27",
+    displayDate: "October 27, 2026",
+    excerpt:
+      "On Veterans Day, November 11, 2026, we will cut the ribbon at Nixon Signature Estates. Join us to tour the suites and meet Ms. Nixon and our team.",
+    coverImage: {
+      src: rcFlyer,
+      alt: "Nixon Signature Estates Ribbon Cutting flyer: Wednesday, November 11, 2026, 10:00 AM to 12:00 PM, Veterans Day. Shows the gold NSE logo, the emblems of the six U.S. military branches, and the three-story Nixon Signature Estates building at dusk. Tour the suites and meet Ms. Nixon and our team at 6710 Bleker St, Houston, TX 77016. RSVP (713) 419-2653.",
+      position: "center 76%",
+    },
+    seo: {
+      title: "Veterans Day Ribbon Cutting | Nixon Signature Estates",
+      description:
+        "Join Nixon Signature Estates for our ribbon cutting on Veterans Day, Nov. 11, 2026, 10 AM–12 PM in Houston. Tour the suites and meet Ms. Nixon and our team.",
+    },
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      name: "Nixon Signature Estates Ribbon Cutting",
+      description:
+        "A Veterans Day ribbon cutting at Nixon Signature Estates, an Intentional Living community in Houston. Guests can tour the suites and meet Ms. Nixon and the team.",
+      startDate: "2026-11-11T10:00:00-06:00",
+      endDate: "2026-11-11T12:00:00-06:00",
+      eventStatus: "https://schema.org/EventScheduled",
+      eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+      isAccessibleForFree: true,
+      image: [new URL(rcFlyer, SITE_URL).href],
+      location: {
+        "@type": "Place",
+        name: "Nixon Signature Estates",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "6710 Bleker St",
+          addressLocality: "Houston",
+          addressRegion: "TX",
+          postalCode: "77016",
+          addressCountry: "US",
+        },
+      },
+      organizer: {
+        "@type": "Organization",
+        name: "Nixon Signature Estates",
+        url: SITE_URL,
+        telephone: "+1-713-419-2653",
+      },
+    },
+    content: [
+      {
+        type: "p",
+        text: "On Wednesday, November 11, 2026, we will cut the ribbon at Nixon Signature Estates, and we would be honored to have you with us. It feels fitting that this milestone falls on Veterans Day, a day set aside to thank those who served. Veterans are at the heart of our community, and we can think of no better morning to mark this next chapter.",
+      },
+      {
+        type: "h2",
+        text: "Event Details",
+      },
+      {
+        type: "p",
+        text: "The ribbon cutting will take place from 10:00 AM to 12:00 PM at 6710 Bleker St, Houston, TX 77016.",
+      },
+      {
+        type: "h2",
+        text: "What to Expect",
+      },
+      {
+        type: "p",
+        text: "After the ceremony, guests are welcome to tour our suites and see firsthand what Intentional Living looks like at Nixon Signature Estates: thoughtfully designed spaces built around comfort, dignity, and community. Ms. Nixon and our team will be there to greet you, answer your questions, and share the vision behind this home.",
+      },
+      {
+        type: "figure",
+        image: {
+          src: rcFlyer,
+          alt: "Nixon Signature Estates Ribbon Cutting invitation flyer with event date, time, address, and RSVP number",
+        },
+      },
+      {
+        type: "h2",
+        text: "We Hope You'll Join Us",
+      },
+      {
+        type: "p",
+        text: "Whether you are a Veteran, a family member, a neighbor, or a friend who has followed our journey since September, you are warmly invited. To help us prepare, please RSVP by calling (713) 419-2653. We look forward to celebrating with you.",
+      },
+    ],
+  },
   {
     slug: "soft-opening",
     title: "Nixon Signature Estates Celebrates Its Soft Opening",
