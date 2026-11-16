@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Pin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { blogPosts } from "@/data/blogPosts";
+
+// Pinned posts first, then newest first.
+const sortedPosts = [...blogPosts].sort(
+  (a, b) => Number(!!b.pinned) - Number(!!a.pinned) || b.date.localeCompare(a.date),
+);
 
 const Blog = () => {
   return (
@@ -23,7 +28,7 @@ const Blog = () => {
       <section className="section-padding bg-background">
         <div className="max-w-5xl mx-auto">
           <div className="grid gap-8">
-            {blogPosts.map((post) => (
+            {sortedPosts.map((post) => (
               <Link
                 key={post.slug}
                 to={`/blog/${post.slug}`}
@@ -39,7 +44,15 @@ const Blog = () => {
                   />
                 </div>
                 <div className="p-6 md:p-2 md:pr-8">
-                  <p className="text-accent text-xs tracking-[0.2em] uppercase font-body mb-3">{post.displayDate}</p>
+                  <p className="flex items-center gap-3 text-accent text-xs tracking-[0.2em] uppercase font-body mb-3">
+                    {post.pinned && (
+                      <span className="inline-flex items-center gap-1 rounded-full bg-accent/15 px-2.5 py-0.5 tracking-wider">
+                        <Pin className="h-3 w-3" />
+                        Pinned
+                      </span>
+                    )}
+                    {post.displayDate}
+                  </p>
                   <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-3">{post.title}</h2>
                   <p className="text-muted-foreground font-body leading-relaxed mb-4">{post.excerpt}</p>
                   <span className="inline-flex items-center gap-1.5 text-primary font-heading text-sm tracking-wide uppercase group-hover:gap-2.5 transition-all">

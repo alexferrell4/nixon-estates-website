@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
-import { ArrowLeft, ArrowRight, Expand } from "lucide-react";
+import { ArrowLeft, ArrowRight, Expand, ExternalLink } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
@@ -116,6 +116,36 @@ const BlogPost = () => {
                   </button>
                 );
               }
+              if (block.type === "links") {
+                return (
+                  <div key={i} className="border-t border-border pt-8">
+                    <h2 className="font-heading text-xl text-foreground mb-4">{block.heading}</h2>
+                    <ul className="space-y-3">
+                      {block.links.map((link) => (
+                        <li key={link.href} className="font-body">
+                          {link.href.startsWith("/") ? (
+                            <Link to={link.href} className="inline-flex items-center gap-1.5 text-primary hover:text-accent transition-colors">
+                              {link.label}
+                              <ArrowRight className="h-4 w-4 shrink-0" />
+                            </Link>
+                          ) : (
+                            <a
+                              href={link.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 text-primary hover:text-accent transition-colors"
+                            >
+                              {link.label}
+                              <ExternalLink className="h-4 w-4 shrink-0" />
+                            </a>
+                          )}
+                          {link.source && <span className="block text-sm text-muted-foreground mt-0.5">{link.source}</span>}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                );
+              }
               // gallery
               return (
                 <div
@@ -123,7 +153,7 @@ const BlogPost = () => {
                   className={`grid gap-4 ${
                     block.images.length === 1
                       ? "grid-cols-1"
-                      : block.images.length === 2
+                      : block.images.length === 2 || block.images.length === 4
                         ? "grid-cols-2"
                         : "grid-cols-2 md:grid-cols-3"
                   }`}
@@ -137,6 +167,7 @@ const BlogPost = () => {
                       <img
                         src={img.src}
                         alt={img.alt}
+                        style={{ objectPosition: img.position }}
                         className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         loading="lazy"
                       />
