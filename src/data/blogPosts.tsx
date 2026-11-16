@@ -12,6 +12,10 @@ import rcrImg01 from "@/assets/blog/ribbon-cutting-recap/ribbon-cutting-recap-01
 import rcrImg02 from "@/assets/blog/ribbon-cutting-recap/ribbon-cutting-recap-02.jpg";
 import rcrImg03 from "@/assets/blog/ribbon-cutting-recap/ribbon-cutting-recap-03.jpg";
 import rcrImg04 from "@/assets/blog/ribbon-cutting-recap/ribbon-cutting-recap-04.jpg";
+import rcrImg05 from "@/assets/blog/ribbon-cutting-recap/ribbon-cutting-recap-05.jpg";
+import rcrImg06 from "@/assets/blog/ribbon-cutting-recap/ribbon-cutting-recap-06.jpg";
+import rcrImg08 from "@/assets/blog/ribbon-cutting-recap/ribbon-cutting-recap-08.jpg";
+import rcrImg09 from "@/assets/blog/ribbon-cutting-recap/ribbon-cutting-recap-09.jpg";
 import forbesCover from "@/assets/blog/forbes-eldercare-feature/ms-nixon-ribbon-cutting.jpg";
 
 const SITE_URL = "https://nixon-estates.com";
@@ -85,18 +89,15 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "The program also included special remarks from Council Member Willie Davis, followed by the official ribbon cutting with the North Chamber, Ms. Nixon, and our invited dignitaries.",
+        text: "The program also included special remarks from Council Member Willie Davis, followed by the official ribbon cutting with the Greater Northside Chamber of Commerce, Ms. Nixon, and our invited dignitaries.",
       },
       {
         type: "gallery",
         images: [
           {
-            src: rcrImg01,
-            alt: "The official ribbon cutting, with gold ceremonial scissors at the ribbon and dignitaries and team members gathered around",
-          },
-          {
-            src: rcrImg02,
-            alt: "Group photo of the Nixon Signature Estates team and invited guests with the ceremonial scissors",
+            src: rcrImg04,
+            position: "center 15%",
+            alt: "Ribbon Cutting program sign listing the welcome, opening prayer, words from the founder, special remarks, ceremony, and tours",
           },
           {
             src: rcrImg03,
@@ -104,9 +105,16 @@ export const blogPosts: BlogPost[] = [
             position: "center 20%",
           },
           {
-            src: rcrImg04,
-            position: "center 15%",
-            alt: "Ribbon Cutting program sign listing the welcome, opening prayer, words from the founder, special remarks, ceremony, and tours",
+            src: rcrImg05,
+            alt: "Dignitaries and team members lined up at the ribbon beside a Greater Northside Chamber of Commerce backdrop",
+          },
+          {
+            src: rcrImg01,
+            alt: "The official ribbon cutting, with gold ceremonial scissors at the ribbon and dignitaries and team members gathered around",
+          },
+          {
+            src: rcrImg02,
+            alt: "Group photo of the Nixon Signature Estates team and invited guests with the ceremonial scissors",
           },
         ],
       },
@@ -117,6 +125,26 @@ export const blogPosts: BlogPost[] = [
       {
         type: "p",
         text: "After the ceremony, guests toured the first level and enjoyed refreshments together. It was a joy to welcome visitors into the spaces we have worked so hard to create.",
+      },
+      {
+        type: "gallery",
+        images: [
+          {
+            src: rcrImg06,
+            alt: "Ms. Debora Nixon sharing a hug and a smile with a guest",
+            position: "center 20%",
+          },
+          {
+            src: rcrImg08,
+            alt: "Three guests smiling together at the ribbon cutting celebration",
+            position: "center 35%",
+          },
+          {
+            src: rcrImg09,
+            alt: "Ms. Debora Nixon sharing a smile with a guest at the ribbon cutting celebration",
+            position: "center 30%",
+          },
+        ],
       },
       {
         type: "h2",
