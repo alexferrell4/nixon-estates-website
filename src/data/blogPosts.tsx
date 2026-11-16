@@ -85,7 +85,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "JoAnn Goodie Charles opened the morning with a warm welcome, and Claude Lewis led us in an opening prayer. Our founder, Ms. Debora A. Nixon, then addressed guests, marking the day Nixon Signature Estates officially opened its doors as an Intentional Living community.",
+        text: "JoAnn Goodie Charles opened the morning with a warm welcome, and Claude Lewis led us in an opening prayer. Our founder, Ms. Debora A. Nixon, then addressed guests, marking an important milestone on the way to welcoming our first residents to Nixon Signature Estates, an Intentional Living community.",
       },
       {
         type: "p",
@@ -152,7 +152,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Holding this celebration on Veterans Day made it especially meaningful. Veterans are at the heart of our community, and we are grateful to everyone who helped us honor those who served while opening this new chapter. If you were not able to join us, we would love to welcome you for a personal tour.",
+        text: "Holding this celebration on Veterans Day made it especially meaningful. Veterans are at the heart of our community, and we are grateful to everyone who helped us honor those who served while celebrating this milestone. If you were not able to join us, we would love to welcome you for a personal tour.",
       },
       {
         type: "h2",
