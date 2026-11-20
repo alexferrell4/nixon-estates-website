@@ -26,7 +26,7 @@ const PrivacyPolicy = () => {
           <section>
             <h2 className="font-heading text-xl text-primary-foreground mb-3">1. Introduction</h2>
             <p>
-              Nixon Home Care, Inc. ("Nixon Senior Estates," "we," "us," or "our") is committed to protecting
+              Nixon Home Care, Inc. ("Nixon Signature Estates," "we," "us," or "our") is committed to protecting
               the privacy of visitors to our website. This Privacy Policy explains how we collect, use, disclose,
               and safeguard your information when you visit our website.
             </p>

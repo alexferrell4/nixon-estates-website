@@ -26,7 +26,7 @@ const TermsOfService = () => {
           <section>
             <h2 className="font-heading text-xl text-primary-foreground mb-3">1. Acceptance of Terms</h2>
             <p>
-              By accessing or using the Nixon Senior Estates website ("Site"), operated by Nixon Home Care, Inc.,
+              By accessing or using the Nixon Signature Estates website ("Site"), operated by Nixon Home Care, Inc.,
               you agree to be bound by these Terms of Service. If you do not agree to these terms,
               please do not use the Site.
             </p>
@@ -57,7 +57,7 @@ const TermsOfService = () => {
             <h2 className="font-heading text-xl text-primary-foreground mb-3">4. Resident Portal</h2>
             <p>
               Access to the Resident Portal is restricted to authorized residents and staff of Nixon
-              Senior Estates. You are responsible for maintaining the confidentiality of your
+              Signature Estates. You are responsible for maintaining the confidentiality of your
               login credentials. You agree to notify us immediately of any unauthorized use of your account.
             </p>
           </section>

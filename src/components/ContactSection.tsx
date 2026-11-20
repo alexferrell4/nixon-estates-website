@@ -160,7 +160,7 @@ const ContactSection = () => {
               </div> 
               <div>
                 <h3 className="font-heading text-lg text-primary-foreground mb-0.5">Follow us on LinkedIn</h3>
-                <p className="text-primary-foreground/60 text-sm font-body"> @Nixon Senior Estates</p>
+                <p className="text-primary-foreground/60 text-sm font-body"> @Nixon Signature Estates</p>
               </div>
             </div>
 
