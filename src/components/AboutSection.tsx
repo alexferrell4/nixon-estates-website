@@ -1,5 +1,5 @@
 import coverVideo from "@/assets/cover.mp4";
-import aboutImage from "@/assets/Smallflyer.png";
+import aboutImage from "@/assets/nse-about-card.jpg";
 
 const AboutSection = () => {
   return (
@@ -42,7 +42,7 @@ const AboutSection = () => {
             <div className="overflow-hidden rounded-2xl shadow-xl border border-border">
   <img
     src={aboutImage}
-    alt="Nixon Senior Estates"
+    alt="Nixon Signature Estates: the three-story building at dusk beside a smiling older man seated in a bright living room, with the NSE logo, the six U.S. military branch emblems, and the line Independence. Dignity. Community."
     className="w-full h-auto transition-transform duration-500 hover:scale-105"
   />
 </div>
